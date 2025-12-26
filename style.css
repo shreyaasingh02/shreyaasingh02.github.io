@@ -1,0 +1,486 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: peachpuff;
+
+    /* background-color: rgb(9, 9, 26); */
+}
+:root {
+    --nav-height: 75px
+}
+nav {
+    background-color: rgb(236, 203, 174);
+    top: 0;
+    left: 0;
+    height: var(--nav-height);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    font-family: 'Montserrat';
+    z-index: 1000;
+}
+nav #modebtn {
+    border-radius: 20px;
+    height: 25px;
+    width: 105px;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+    color: gray;
+    background-color: rgb(245, 236, 236);;
+}
+nav #modebtn:hover {
+    border: 1px solid rgb(116, 51, 51);
+    transform: scale(1.05);
+    box-shadow: 1px 1px 3px rgb(116, 51, 51);
+    color: rgb(41, 38, 38);
+
+}
+.left {
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.right .nav-item {
+    position: relative;
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+    margin: 0 25px;
+}
+.nav-item::before {
+    content: "{";
+    position: absolute;
+    left: -12px;
+    opacity: 0;
+    transition: all 0.3s ;
+}
+.nav-item::after {
+    content: "}";
+    position: absolute;
+    right: -12px;
+    opacity: 0;
+    transition: all 0.3s ;
+}
+.nav-item:hover::before .nav-item:hover::after {
+    opacity: 1;
+}
+.nav-item.active::before {
+    left: -12px;
+    opacity: 1;
+}
+.nav-item.active::after {
+    right: -12px;
+    opacity: 1;
+}
+
+main {
+    padding-top: var(--nav-height);
+    color: rgb(0, 0, 0);
+}
+.section {
+    scroll-margin-top: 85px;
+    background-color: rgb(245, 236, 236);
+}
+
+#home {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-radius: 80px;
+    background-color: rgb(245, 236, 236);
+    height: 88vh;
+    display: flex;
+    justify-content: space-around;
+}
+#home > div {
+    width: 30%;
+    font-family: 'Raleway';
+}
+.home-left {
+    margin-top: 10% ;
+    font-size: 3.2rem;
+}
+.tittle,
+.subtittle,
+.word-ani {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.tittle {
+    animation: fadeup 1s ease forwards;
+}
+.subtittle {
+    animation: fadeup 1s ease forwards;
+    animation-delay: 0.2s;
+}
+.word-ani {
+    animation: fadeup 1s ease forwards;
+    animation-delay: 0.4s;
+}
+@keyframes fadeup {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#element {
+    color: rgb(172, 51, 51);
+}
+.home-right {
+    margin-top: 10%;
+}
+.home-right img {
+    height: 50vh;
+    width: 97%;
+    border-radius: 50%;
+}
+
+/* section 2 -----------------------------------------------------------------------------------------------*/
+#about {
+    margin-bottom: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-radius: 80px;
+    background-color: rgb(245, 236, 236);
+    height: 88vh;
+    display: flex;
+    justify-content: space-around;
+}
+.right-about {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: 'Raleway';
+}
+.about-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-head h2 {
+    font-family: 'Montserrat';
+}
+strong {
+    color: rgb(172, 51, 51);
+}
+.left-about {
+    width: 30%;
+}
+.left-up {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+.left-up li {
+    list-style: none;
+    font-family: 'Raleway';
+}
+
+.left-up h2 {
+    font-family: 'Montserrat';
+}
+.left-about, .right-about {
+    opacity: 0;
+    transform: translateX(30px);
+}
+.left-about {
+    animation: horizfade 1s ease forwards;
+}
+.right-about {
+    animation: horizfade 1s ease forwards;
+    animation-delay: 0.2s;
+}
+@keyframes horizfade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* section 3--------------------------------------------------------------------------------------------------------- */
+#project {
+    margin-bottom: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-radius: 80px;
+    background-color: rgb(245, 236, 236);
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.proj-head {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: 'Montserrat';
+}
+.cards {
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 30px;
+    width: 100vw;
+    max-width: 1250px;
+    display: flex;
+    padding: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.all-cards {
+    background-color: rgb(189, 90, 90);
+    min-width: 400px;
+    height: 670px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.card-img {
+    display: flex;
+    gap: 20px;
+    width: 400px;
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
+
+.card-img img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+.card-para {
+    margin-top: 5px;
+    width: 380px;
+    padding-left: 20px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Montserrat';
+}
+.card-para p {
+    font-family: 'Montserrat';
+    font-weight: 200;
+}
+.card-para ul {
+    padding-left: 30px;
+}
+.card-para li {
+    font-family: 'Montserrat';
+    font-weight: 200;
+    font-size: 1.1rem;
+}
+.btn-2 {
+    margin-top: 10px;
+    background-color: #31170c;
+    border: 1px solid gold;
+    border-radius: 20px;
+    height: 30px;
+    width: 50%;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+.btn-2:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px rgb(240, 209, 34);
+}
+.card-2 {
+    background-color: #1a0f0a;
+    color: white;
+}
+.card-1 {
+    background-color: #1C1E22;
+    color: white;
+}
+.btn-1 {
+    margin-top: 10px;
+    background-color: #1C1E22;
+    border: 1px solid #9B6DE5;
+    border-radius: 20px;
+    height: 30px;
+    width: 50%;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+.btn-1:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px #9B6DE5;
+}
+.card-3 {
+    background-color: #f4e4ba;
+    color: rgb(0, 0, 0);
+}
+.card-3 .card-para p {
+    font-weight: 500;
+}
+.card-3 .card-para li {
+    font-weight: 500;
+}
+.btn-3 {
+    margin-top: 10px;
+    background-color: #fadc92;
+    border: 1px solid violet;
+    border-radius: 20px;
+    height: 30px;
+    width: 50%;
+    color: rgb(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.btn-3:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px rgb(117, 11, 117);
+}
+
+.card-4 {
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    color: black;
+}
+.card-4 .card-para p {
+    font-weight: 500;
+}
+.card-4 .card-para li {
+    font-weight: 500;
+}
+.btn-4 {
+    margin-top: 10px;
+    background-color: #84fab0;
+    border: 1px solid blue;
+    border-radius: 20px;
+    height: 30px;
+    width: 50%;
+    color: rgb(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.btn-4:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px blue;
+}
+
+.card-5 {
+    background-color: #930523;
+    color: white;
+}
+.btn-5 {
+    margin-top: 10px;
+    background-color: #ac1a3a;
+    border: 1px solid green;
+    border-radius: 20px;
+    height: 30px;
+    width: 50%;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+.btn-5:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px green;
+}
+.card-6 {
+    background-color: #f4e4ba;
+    color: rgb(0, 0, 0);
+}
+.card-6 .card-para p {
+    font-weight: 500;
+}
+.card-6 .card-para li {
+    font-weight: 500;
+}
+.btn-6 {
+    margin-top: 10px;
+    background-color: #fadc92;
+    border: 1px solid violet;
+    border-radius: 20px;
+    height: 30px;
+    width: 50%;
+    color: rgb(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.btn-6:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px rgb(117, 11, 117);
+}
+
+/* section 4------------------------------------------------------------------------------------------------------------- */
+#contact {
+    margin-bottom: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-radius: 80px;
+    background-color: rgb(245, 236, 236);
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.contact-head {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: 'Montserrat';
+}
+.area {
+    gap: 50px;
+}
+.up-part {
+    height: 350px;
+    width: 40vw;
+}
+.up-part p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-family: 'Poppins';
+}
+.para1 {
+    font-size: 4rem;
+    font-family:  serif;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.para2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Montserrat';
+}
+.down-part {
+    height: 300px;
+    width: 70vw;
+    padding: 10px;
+}
+.btn {
+    background-color: rgb(116, 55, 55);
+    border-radius: 30px;
+    display: inline-block;
+    padding: 12px 28px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+.btn:hover {
+    transform: scale(1.05);
+    background-color: rgb(131, 71, 71);
+}

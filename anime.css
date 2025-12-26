@@ -1,0 +1,20 @@
+.anime-ls {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+.anime-ls.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.8s ease;
+}
+.anime-rs {
+    opacity: 0;
+    transform: translateX(20px);
+}
+.anime-rs.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s ease;
+}
+
+
