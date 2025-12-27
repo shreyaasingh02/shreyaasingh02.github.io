@@ -291,6 +291,12 @@ strong {
     font-weight: 200;
     font-size: 1.1rem;
 }
+.card-para a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .btn-2 {
     margin-top: 10px;
     background-color: #31170c;
@@ -315,7 +321,7 @@ strong {
 }
 .btn-1 {
     margin-top: 10px;
-    background-color: #1C1E22;
+    background-color: #121314;
     border: 1px solid #9B6DE5;
     border-radius: 20px;
     height: 30px;
@@ -338,7 +344,9 @@ strong {
     font-weight: 500;
 }
 .btn-3 {
-    margin-top: 10px;
+    margin-top: 50px;
+    /* background-color: green; */
+    /* margin-bottom: 1px; */
     background-color: #fadc92;
     border: 1px solid violet;
     border-radius: 20px;
