@@ -404,7 +404,7 @@ strong {
     box-shadow: 1px 1px 20px green;
 }
 .card-6 {
-    background-color: #f4e4ba;
+    background-color: peachpuff;
     color: rgb(0, 0, 0);
 }
 .card-6 .card-para p {
@@ -415,8 +415,8 @@ strong {
 }
 .btn-6 {
     margin-top: 10px;
-    background-color: #fadc92;
-    border: 1px solid violet;
+    background-color: peachpuff;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
     height: 30px;
     width: 50%;
@@ -425,7 +425,7 @@ strong {
 }
 .btn-6:hover {
     transform: scale(1.02);
-    box-shadow: 1px 1px 20px rgb(117, 11, 117);
+    box-shadow: 1px 1px 20px rgb(180, 99, 28);
 }
 
 /* section 4------------------------------------------------------------------------------------------------------------- */
